@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timed Trial</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!--nav bar for highscores/timer-->
+    <nav class="navBar">
+        <a href="assets/js/highscore.html"><h1>View Highscores</h1></a>
+        <div class="timer" id="time-left"></div>
+    </nav>
+
+    <!--start quiz buttton-->
+    <div class="start-section">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit.<br>
+            Keep in mind that incorrect answers will penalize your scoretime by 10 seconds!</br>
+        </p>
+        <button class="start-btn">Start Quiz</button>
+    </div>
+
+    <div class="quiz-section">
+        
+        <section>
+            <div class="question"> <!--insert question here!--></div>
+            <div class="answer-options"><!--insert option list here!--></div>
+        </section>
+
+        <footer>
+            <div class="answer-result"><!--insert result of question--></div>
+        </footer>
+
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

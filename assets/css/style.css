@@ -1,0 +1,40 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+nav {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: .65vw;
+}
+
+nav a {
+    text-decoration: none;
+    color: #730099;
+}
+
+
+
+/* start quiz section */
+.start-section {
+    text-decoration: none;
+    text-align: center;
+}
+
+.start-section h1 {
+    padding-bottom: 8px;
+}
+
+.start-section p {
+    font-size: small;
+    font-weight: lighter;
+}
+.start-section button {
+    border: none; 
+    background-color: #730099;
+    color: white; 
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
