@@ -5,6 +5,7 @@ var quiz = document.querySelector(".quiz-container");
 var Choices = document.querySelector(".quiz-options"); 
 var questionEl = document.querySelector(".quiz-question"); 
 var choiceResult = document.querySelector(".choice-result"); 
+var final = document.querySelector(".final-score");
 var initials = document.querySelector(".submit-initials"); 
 var timerEl = document.createElement("h1"); 
 
@@ -46,9 +47,9 @@ let questions = [
         
     }, 
     {
-        question: "True or False, You do not need JavaScript to create a website.",  
-        options: ["A: True", "B: False"],
-        answer: "A: True"
+        question: "What year was JavaScript created?",  
+        options: ["A: 1995", "B: 1991", "C: 1972", "D: 1983"],
+        answer: "A: 1995"
     }, 
     {
         question: "How do you create a flexbox?", 
@@ -59,19 +60,26 @@ let questions = [
 
 
 
-// create click event on the start button to start a quiz. 
-startBtn.addEventListener("click", function() {
+
+
+var quizTime = function() {
     // create function for timer
     var timer = setInterval(function() { 
-        timerEl.textContent = "Timer: " + time; 
-        time--; 
-        if (index >= questions.length || time < 0) {
-            clearInterval(timer);
+        if(index >= questions.length || time === 0) {
             quizOver(); 
+        } else {
+            timerEl.textContent = "Timer: " + time; 
+            time--;
+            return time;  
         }
+        return time; 
     }, 1000);
-    beginQuiz(); 
-}); 
+
+}; 
+
+
+
+
 
 
 
@@ -79,11 +87,18 @@ startBtn.addEventListener("click", function() {
 var beginQuiz = function() {
     // remove  start-quiz section
     start.setAttribute("style", "display: none"); 
-    
+    quizTime(); 
     //display first question
     showQuestions(); 
 }; 
 
+var quizOver = function () {
+    clearInterval(quizTime);
+    quiz.setAttribute("style", "display: none");
+    choiceResult.setAttribute("style", "display: none");
+    initials.setAttribute("style", "display: flex"); 
+    final.textContent = "Your final score is " + time; 
+}
 
 var showQuestions = function(){
     questionEl.textContent = questions[index].question
@@ -105,7 +120,6 @@ var checkAnswer = function(answer) {
         timerEl.textContent = "Timer: " + time;
         choiceResult.setAttribute("style", "display: block"); 
         choiceResult.textContent = "Incorrect!";
-        //add text content for results section
     } 
     index++; 
     if(index < questions.length) {
@@ -128,9 +142,7 @@ var pickedD = function() {checkAnswer(3)};
 
 
 
-var quizOver = function () {
-    
-}
+
 
 // created a function to to display the results of each answered question. 
 var showResults = function() {
@@ -139,6 +151,7 @@ var showResults = function() {
 
 
 //event listeners for the question options
+startBtn.addEventListener("click", beginQuiz); 
 optionA.addEventListener("click", pickedA); 
 optionB.addEventListener("click", pickedB); 
 optionC.addEventListener("click", pickedC); 
