@@ -16,25 +16,124 @@ nav a {
 
 
 
+
 /* start quiz section */
-.start-section {
+.start-container {
     text-decoration: none;
     text-align: center;
 }
 
-.start-section h1 {
+.start-container h1 {
     padding-bottom: 8px;
 }
 
-.start-section p {
+.start-container p {
     font-size: small;
     font-weight: lighter;
 }
-.start-section button {
+.start-container button {
     border: none; 
     background-color: #730099;
     color: white; 
     border-radius: 5px;
     padding: 5px;
     margin-top: 10px;
+}
+
+.start-container button:hover {
+    background-color: rgba(115, 0, 153, .50)
+}
+
+/*quiz container*/
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#quiz-con {
+    display: none;
+}
+
+.quiz-question {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: black;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+
+.quiz-options button {
+    background-color: #730099;
+    color: white;
+    border: none;
+    text-align: start;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    width: auto;
+}
+
+.quiz-options button:hover {
+    background-color: rgba(115, 0, 153, .50)
+}
+
+/*highscore html page*/
+.highscore-title {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.h-button{
+    display: flex;
+    flex: 1; 
+    justify-content: center;
+}
+
+.highscore-button button {
+    border: none;
+    border-radius: 5px;
+    background-color: #730099;
+    color: white;
+    padding: 5px; 
+    margin: 5px;
+}
+
+.highscore-button button:hover {
+    background-color: rgba(115, 0, 153, .50)
+}
+.submit-initials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.submit-initials p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    font-size: small;
+}
+
+/*results of question*/
+.choice-result {
+    display: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 10px;
 }

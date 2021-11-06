@@ -9,13 +9,13 @@
 </head>
 <body>
     <!--nav bar for highscores/timer-->
-    <nav class="navBar">
-        <a href="assets/js/highscore.html"><h1>View Highscores</h1></a>
-        <div class="timer" id="time-left"></div>
+    <nav class="nav-bar">
+        <a href="highscore.html"><h1>View Highscores</h1></a>
+        <div class="timer"></div>
     </nav>
 
-    <!--start quiz buttton-->
-    <div class="start-section">
+    <!--a section containing quiz rules and start button-->
+    <div class="start-container">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit.<br>
             Keep in mind that incorrect answers will penalize your scoretime by 10 seconds!</br>
@@ -23,20 +23,33 @@
         <button class="start-btn">Start Quiz</button>
     </div>
 
-    <div class="quiz-section">
-        
-        <section>
-            <div class="question"> <!--insert question here!--></div>
-            <div class="answer-options"><!--insert option list here!--></div>
-        </section>
+    <!--a section containing the question and answer choices-->
+    <div class="quiz-container" id="quiz-con">
+    <div class="quiz-question"></div>
+       <div class="quiz-options">
+          <button class="a"></button>
+          <button class="b"></button>
+          <button class="c"></button>
+          <button class="d"></button>
+       </div>
+    </div>
+    <!--create section to display instant results-->
+    <div class="choice-result">
+        <p class="choice-result"><!--insert result--></p>
+    </div>
 
-        <footer>
-            <div class="answer-result"><!--insert result of question--></div>
-        </footer>
-
+    <div class="submit-initials">
+        <h1>All Done!</h1>
+        <p><!--your final score is ...--></p>
+        <p>Enter Initials: </p>
+        <input type="text" name="" id="">
     </div>
 
 
     <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+
+
+
