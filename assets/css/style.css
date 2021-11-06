@@ -114,6 +114,12 @@ nav a {
 .highscore-button button:hover {
     background-color: rgba(115, 0, 153, .50)
 }
+
+.highscore-list {
+
+}
+
+
 .submit-initials {
     display: flex;
     flex-direction: column;
@@ -128,6 +134,18 @@ nav a {
     font-size: small;
 }
 
+.submit-initials button {
+    background-color: #730099;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.submit-initials button:hover {
+    background-color: rgba(115, 0, 153, .50)
+}
 /*results of question*/
 .choice-result {
     display: none;

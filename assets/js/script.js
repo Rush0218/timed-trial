@@ -7,8 +7,10 @@ var questionEl = document.querySelector(".quiz-question");
 var choiceResult = document.querySelector(".choice-result"); 
 var final = document.querySelector(".final-score");
 var initials = document.querySelector(".submit-initials"); 
+var nameField = document.querySelector("#name-field");
+var initialsBtn = document.querySelector(".submit-button"); 
+var highscoreList = document.querySelector(".highscore-list"); 
 var timerEl = document.createElement("h1"); 
-
 
 var optionA = document.querySelector(".a");
 var optionB = document.querySelector(".b");
@@ -61,7 +63,7 @@ let questions = [
 
 
 
-
+// create function to control the timer for quiz
 var quizTime = function() {
     // create function for timer
     var timer = setInterval(function() { 
@@ -78,11 +80,6 @@ var quizTime = function() {
 }; 
 
 
-
-
-
-
-
 // create function to display questions one at a time. 
 var beginQuiz = function() {
     // remove  start-quiz section
@@ -92,14 +89,17 @@ var beginQuiz = function() {
     showQuestions(); 
 }; 
 
+// create function to end quiz when all questions are answered or time has ran out. 
 var quizOver = function () {
     clearInterval(quizTime);
+    timerEl.setAttribute("style", "display: none");
     quiz.setAttribute("style", "display: none");
     choiceResult.setAttribute("style", "display: none");
     initials.setAttribute("style", "display: flex"); 
     final.textContent = "Your final score is " + time; 
-}
+}; 
 
+// assign array content to quiz question/options
 var showQuestions = function(){
     questionEl.textContent = questions[index].question
     optionA.textContent = questions[index].options[0]; 
@@ -129,7 +129,26 @@ var checkAnswer = function(answer) {
     }
 }; 
 
+//create function to hold highscore
+var highScore = function(event) {
+    event.preventDefault(); 
+    if (nameField.value === "") {
+        alert("You must enter your initials!");
+        return; 
+    } else  {
+        var highscore = {
+            name: nameField.value.trim(), 
+            score: time
+        }
+        localStorage.setItem("highscore", JSON.stringify(highscore))
+        initials.remove();
+        list(); 
+    }
+};
 
+var list = function (){
+    JSON.parse(localStorage.getItem("highscore")); 
+};
 
 var pickedA = function() {checkAnswer(0)};
 var pickedB = function() {checkAnswer(1)}; 
@@ -138,37 +157,10 @@ var pickedD = function() {checkAnswer(3)};
 
 
 
-
-
-
-
-
-
-// created a function to to display the results of each answered question. 
-var showResults = function() {
-    
-};
-
-
 //event listeners for the question options
 startBtn.addEventListener("click", beginQuiz); 
+initialsBtn.addEventListener("click", function(event){highScore(event)});
 optionA.addEventListener("click", pickedA); 
 optionB.addEventListener("click", pickedB); 
 optionC.addEventListener("click", pickedC); 
-optionD.addEventListener("click", pickedD); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+optionD.addEventListener("click", pickedD);
