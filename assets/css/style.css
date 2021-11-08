@@ -14,6 +14,20 @@ nav a {
     color: #730099;
 }
 
+button {
+    background-color: #730099;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgba(115, 0, 153, .50)
+}
+
+
 
 
 
@@ -31,18 +45,9 @@ nav a {
     font-size: small;
     font-weight: lighter;
 }
-.start-container button {
-    border: none; 
-    background-color: #730099;
-    color: white; 
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 10px;
-}
 
-.start-container button:hover {
-    background-color: rgba(115, 0, 153, .50)
-}
+
+
 
 /*quiz container*/
 .quiz-container {
@@ -70,54 +75,39 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
 }
 
 
-.quiz-options button {
-    background-color: #730099;
-    color: white;
-    border: none;
-    text-align: start;
-    margin: 3px;
-    padding: 5px;
-    border-radius: 5px;
-    width: auto;
-}
 
-.quiz-options button:hover {
-    background-color: rgba(115, 0, 153, .50)
-}
 
 /*highscore html page*/
+.highscore-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .highscore-title {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
     color: black;
 }
 
-.h-button{
-    display: flex;
-    flex: 1; 
-    justify-content: center;
-}
-
-.highscore-button button {
-    border: none;
-    border-radius: 5px;
-    background-color: #730099;
-    color: white;
-    padding: 5px; 
-    margin: 5px;
-}
-
-.highscore-button button:hover {
-    background-color: rgba(115, 0, 153, .50)
-}
-
 .highscore-list {
-
+    text-align: center;
+    padding: 10px 10px;
+    background-color: rgba(115, 0, 153, .30);
+    color: black;
+    font-weight: lighter;
+    font-size: small;
+    font-family: Helvetica, Arial, sans-serif;
 }
+
+
+
+
+
+
 
 
 .submit-initials {
@@ -134,18 +124,8 @@ nav a {
     font-size: small;
 }
 
-.submit-initials button {
-    background-color: #730099;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 5px;
-}
+                       
 
-.submit-initials button:hover {
-    background-color: rgba(115, 0, 153, .50)
-}
 /*results of question*/
 .choice-result {
     display: none;
