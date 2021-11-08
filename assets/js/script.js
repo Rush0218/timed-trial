@@ -8,14 +8,11 @@ var final = document.querySelector(".final-score");
 var initials = document.querySelector(".submit-initials"); 
 var nameField = document.querySelector("#name-field");
 var initialsBtn = document.querySelector(".submit-button"); 
- 
 
 var optionA = document.querySelector(".a");
 var optionB = document.querySelector(".b");
 var optionC = document.querySelector(".c");
 var optionD = document.querySelector(".d");
-
-
 
 //timer total
 var time = 75; 
@@ -26,8 +23,6 @@ var correctAnswer = 0;
 var timerEl = document.createElement("h1"); 
 timerEl.textContent = "Timer: " + 0; 
 navEl.appendChild(timerEl); 
-
-
 
 //create an array of quetsions
 let questions = [
@@ -59,9 +54,6 @@ let questions = [
     }  
 ]
 
-
-
-
 //create function to control the timer for quiz
 var quizTime = function() {
     //create function for timer
@@ -77,7 +69,6 @@ var quizTime = function() {
         return time; 
     }, 1000);
 }; 
-
 
 //create function to display questions one at a time. 
 var beginQuiz = function() {
@@ -128,9 +119,6 @@ var checkAnswer = function(answer) {
     }
 }; 
  
-
-
-
 //create function to hold highscore
 var highScore = function() { 
     if (nameField.value === "") {
@@ -147,16 +135,11 @@ var highScore = function() {
     window.location.href= "highscore.html";
 };
 
-
-
-
 //create functions to check and see if answer chosen is correct
 var pickedA = function() {checkAnswer(0)};
 var pickedB = function() {checkAnswer(1)}; 
 var pickedC = function() {checkAnswer(2)}; 
 var pickedD = function() {checkAnswer(3)}; 
-
-
 
 //event listeners for the question options
 startBtn.addEventListener("click", beginQuiz); 
@@ -165,8 +148,3 @@ optionB.addEventListener("click", pickedB);
 optionC.addEventListener("click", pickedC); 
 optionD.addEventListener("click", pickedD);
 initialsBtn.addEventListener("click", highScore);
-
-
-
-
-

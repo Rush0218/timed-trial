@@ -28,9 +28,6 @@ button:hover {
 }
 
 
-
-
-
 /* start quiz section */
 .start-container {
     text-decoration: none;
@@ -45,8 +42,6 @@ button:hover {
     font-size: small;
     font-weight: lighter;
 }
-
-
 
 
 /*quiz container*/
@@ -78,8 +73,6 @@ button:hover {
 }
 
 
-
-
 /*highscore html page*/
 .highscore-page {
     display: flex;
@@ -103,13 +96,6 @@ button:hover {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-
-
-
-
-
-
-
 .submit-initials {
     display: flex;
     flex-direction: column;
@@ -124,7 +110,6 @@ button:hover {
     font-size: small;
 }
 
-                       
 
 /*results of question*/
 .choice-result {
